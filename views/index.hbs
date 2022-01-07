@@ -1,0 +1,129 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Student Data Base</a>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Enter student information</div>
+                <div class="card-body text-dark">
+                    <form action="/insert" method="post">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Student Name</label>
+                            <input type="text" class="form-control" name="studentname" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Student Number</label>
+                            <input type="text" class="form-control" name="studentnumber" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Student Email</label>
+                            <input type="email" class="form-control" name="studentemail" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Sudent Majer</label>
+                            <input type="text" class="form-control" name="studentmajer" />
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">student information</div>
+                <div class="card-body text-dark">
+
+                    {{#each items }}
+                    <div class="list-group-item">
+                        <div>
+                            ID : {{this._id}}
+                        </div>
+                        <div>
+                            Student Name : {{this.studentName}}
+                        </div>
+                        <div>
+                            Student Number : {{this.studentNumber}}
+                        </div>
+                        <div>
+                            Student Email : {{this.studentEmail}}
+                        </div>
+                        <div>
+                            Student Majer : {{this.studentMajer}}
+                        </div>
+                    </div>
+                    <br>
+                    {{/each}}
+
+
+                    <form action="/stdudentsinfo" method="get">
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Get Students Info</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Update student information</div>
+                <div class="card-body text-dark">
+                    <form action="/update" method="post">
+                        <div class="mb-3">
+                            <label for="Student ID" class="form-label">Student ID</label>
+                            <input type="text" class="form-control" name="id" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Student Name" class="form-label">Student Name</label>
+                            <input type="text" class="form-control" name="studentname" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Student Number" class="form-label">Student Number</label>
+                            <input type="text" class="form-control" name="studentnumber" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Student Email" class="form-label">Student Email</label>
+                            <input type="email" class="form-control" name="studentemail" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Sudent Majer" class="form-label">Sudent Majer</label>
+                            <input type="text" class="form-control" name="studentmajer" />
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">Delet student information</div>
+                <div class="card-body text-dark">
+                    <form action="/delete" method="post">
+                        <div class="mb-3">
+                            <label for="Student ID" class="form-label">Student ID</label>
+                            <input type="text" class="form-control" name="id" />
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
